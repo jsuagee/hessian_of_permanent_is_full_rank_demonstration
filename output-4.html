@@ -1,0 +1,4056 @@
+<html>
+<head>
+<title>Reduction Sequence</title>
+<style>
+        .message {
+                  text-align: center;
+                  display: none;
+        }
+        .dataframe { 
+                font-size: 11pt; 
+                font-family: Arial; 
+                border-collapse: collapse; 
+                border: 1px solid silver;
+                text-align: right;
+                margin-left: auto;
+                margin-right: auto;
+        }
+        .controls-container {
+          text-align: center;
+          margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="message-container">
+<p class="message" style="display: none;">Initial State.</p><p class="message" style="display: none;">Subract column indexed by (1, 0) from column indexed by (1, 2).</p><p class="message" style="display: none;">Subract column indexed by (1, 0) from column indexed by (1, 3).</p><p class="message" style="display: none;">Subract column indexed by (2, 0) from column indexed by (2, 1).</p><p class="message" style="display: none;">Subract column indexed by (2, 0) from column indexed by (2, 3).</p><p class="message" style="display: none;">Subract column indexed by (3, 0) from column indexed by (3, 1).</p><p class="message" style="display: none;">Subract column indexed by (3, 0) from column indexed by (3, 2).</p><p class="message" style="display: none;">Subract row indexed by (1, 0) from row indexed by (1, 2).</p><p class="message" style="display: none;">Subract row indexed by (1, 0) from row indexed by (1, 3).</p><p class="message" style="display: none;">Subract row indexed by (2, 0) from row indexed by (2, 1).</p><p class="message" style="display: none;">Subract row indexed by (2, 0) from row indexed by (2, 3).</p><p class="message" style="display: none;">Subract row indexed by (3, 0) from row indexed by (3, 1).</p><p class="message" style="display: none;">Subract row indexed by (3, 0) from row indexed by (3, 2).</p><p class="message" style="display: none;">The (0, 1)'th column has a single nonzero entry. Use this to zero out the whole row (1, 0).</p><p class="message" style="display: none;">The (0, 2)'th column has a single nonzero entry. Use this to zero out the whole row (2, 0).</p><p class="message" style="display: none;">The (0, 3)'th column has a single nonzero entry. Use this to zero out the whole row (3, 0).</p><p class="message" style="display: none;">The (0, 1)'th row has a single nonzero entry. Use this to zero out the whole column (1, 0).</p><p class="message" style="display: none;">The (0, 2)'th row has a single nonzero entry. Use this to zero out the whole column (2, 0).</p><p class="message" style="display: none;">The (0, 3)'th row has a single nonzero entry. Use this to zero out the whole column (3, 0).</p><p class="message" style="display: none;">Final State.</p></div>
+<div class="slideshow-container">
+<div class="slide" style="display: none;"><table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>(0, 1)</th>
+<th>(0, 2)</th>
+<th>(0, 3)</th>
+<th>(1, 0)</th>
+<th>(1, 2)</th>
+<th>(1, 3)</th>
+<th>(2, 0)</th>
+<th>(2, 1)</th>
+<th>(2, 3)</th>
+<th>(3, 0)</th>
+<th>(3, 1)</th>
+<th>(3, 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>(0, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(1, 0)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 2)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-2</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 3)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>-2</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 0)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 1)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>-2</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 3)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>-2</td>
+</tr>
+<tr>
+<th>(3, 0)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-2</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-2</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table></div><div class="slide" style="display: none;"><table border="1" class="dataframe"><colgroup><col span="4"/><col span="1" style="background-color: red"/><col span="1" style="background-color: pink"/><col span="6"/></colgroup>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>(0, 1)</th>
+<th>(0, 2)</th>
+<th>(0, 3)</th>
+<th>(1, 0)</th>
+<th>(1, 2)</th>
+<th>(1, 3)</th>
+<th>(2, 0)</th>
+<th>(2, 1)</th>
+<th>(2, 3)</th>
+<th>(3, 0)</th>
+<th>(3, 1)</th>
+<th>(3, 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>(0, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(1, 0)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 2)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-2</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 3)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>-2</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 0)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 1)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>-2</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 3)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>-2</td>
+</tr>
+<tr>
+<th>(3, 0)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-2</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-2</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table></div><div class="slide" style="display: none;"><table border="1" class="dataframe"><colgroup><col span="4"/><col span="1" style="background-color: red"/><col span="1"/><col span="1" style="background-color: pink"/><col span="5"/></colgroup>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>(0, 1)</th>
+<th>(0, 2)</th>
+<th>(0, 3)</th>
+<th>(1, 0)</th>
+<th>(1, 2)</th>
+<th>(1, 3)</th>
+<th>(2, 0)</th>
+<th>(2, 1)</th>
+<th>(2, 3)</th>
+<th>(3, 0)</th>
+<th>(3, 1)</th>
+<th>(3, 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>(0, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(1, 0)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 2)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-2</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 3)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>-2</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 0)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 1)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>-3</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 3)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>-2</td>
+</tr>
+<tr>
+<th>(3, 0)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>-2</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-2</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table></div><div class="slide" style="display: none;"><table border="1" class="dataframe"><colgroup><col span="7"/><col span="1" style="background-color: red"/><col span="1" style="background-color: pink"/><col span="3"/></colgroup>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>(0, 1)</th>
+<th>(0, 2)</th>
+<th>(0, 3)</th>
+<th>(1, 0)</th>
+<th>(1, 2)</th>
+<th>(1, 3)</th>
+<th>(2, 0)</th>
+<th>(2, 1)</th>
+<th>(2, 3)</th>
+<th>(3, 0)</th>
+<th>(3, 1)</th>
+<th>(3, 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>(0, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(1, 0)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 2)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-2</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 3)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>-2</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 0)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 1)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 3)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>-2</td>
+</tr>
+<tr>
+<th>(3, 0)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-2</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table></div><div class="slide" style="display: none;"><table border="1" class="dataframe"><colgroup><col span="7"/><col span="1" style="background-color: red"/><col span="1"/><col span="1" style="background-color: pink"/><col span="2"/></colgroup>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>(0, 1)</th>
+<th>(0, 2)</th>
+<th>(0, 3)</th>
+<th>(1, 0)</th>
+<th>(1, 2)</th>
+<th>(1, 3)</th>
+<th>(2, 0)</th>
+<th>(2, 1)</th>
+<th>(2, 3)</th>
+<th>(3, 0)</th>
+<th>(3, 1)</th>
+<th>(3, 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>(0, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(1, 0)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 2)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-3</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 3)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>-2</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 0)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 1)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 3)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>-2</td>
+</tr>
+<tr>
+<th>(3, 0)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>-2</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table></div><div class="slide" style="display: none;"><table border="1" class="dataframe"><colgroup><col span="10"/><col span="1" style="background-color: red"/><col span="1" style="background-color: pink"/></colgroup>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>(0, 1)</th>
+<th>(0, 2)</th>
+<th>(0, 3)</th>
+<th>(1, 0)</th>
+<th>(1, 2)</th>
+<th>(1, 3)</th>
+<th>(2, 0)</th>
+<th>(2, 1)</th>
+<th>(2, 3)</th>
+<th>(3, 0)</th>
+<th>(3, 1)</th>
+<th>(3, 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>(0, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(1, 0)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 2)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 3)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>-2</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 0)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 1)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 3)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>-2</td>
+</tr>
+<tr>
+<th>(3, 0)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table></div><div class="slide" style="display: none;"><table border="1" class="dataframe"><colgroup><col span="10"/><col span="1" style="background-color: red"/><col span="1"/><col span="1" style="background-color: pink"/></colgroup>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>(0, 1)</th>
+<th>(0, 2)</th>
+<th>(0, 3)</th>
+<th>(1, 0)</th>
+<th>(1, 2)</th>
+<th>(1, 3)</th>
+<th>(2, 0)</th>
+<th>(2, 1)</th>
+<th>(2, 3)</th>
+<th>(3, 0)</th>
+<th>(3, 1)</th>
+<th>(3, 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>(0, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(1, 0)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 2)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 3)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>-3</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 0)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 1)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 3)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-2</td>
+</tr>
+<tr>
+<th>(3, 0)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table></div><div class="slide" style="display: none;"><table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>(0, 1)</th>
+<th>(0, 2)</th>
+<th>(0, 3)</th>
+<th>(1, 0)</th>
+<th>(1, 2)</th>
+<th>(1, 3)</th>
+<th>(2, 0)</th>
+<th>(2, 1)</th>
+<th>(2, 3)</th>
+<th>(3, 0)</th>
+<th>(3, 1)</th>
+<th>(3, 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>(0, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr style="background-color: red">
+<th>(1, 0)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr style="background-color: pink">
+<th>(1, 2)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 3)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>-3</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 0)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 1)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 3)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-3</td>
+</tr>
+<tr>
+<th>(3, 0)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table></div><div class="slide" style="display: none;"><table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>(0, 1)</th>
+<th>(0, 2)</th>
+<th>(0, 3)</th>
+<th>(1, 0)</th>
+<th>(1, 2)</th>
+<th>(1, 3)</th>
+<th>(2, 0)</th>
+<th>(2, 1)</th>
+<th>(2, 3)</th>
+<th>(3, 0)</th>
+<th>(3, 1)</th>
+<th>(3, 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>(0, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr style="background-color: red">
+<th>(1, 0)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr style="background-color: pink">
+<th>(1, 3)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>-3</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 0)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 1)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 3)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-3</td>
+</tr>
+<tr>
+<th>(3, 0)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table></div><div class="slide" style="display: none;"><table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>(0, 1)</th>
+<th>(0, 2)</th>
+<th>(0, 3)</th>
+<th>(1, 0)</th>
+<th>(1, 2)</th>
+<th>(1, 3)</th>
+<th>(2, 0)</th>
+<th>(2, 1)</th>
+<th>(2, 3)</th>
+<th>(3, 0)</th>
+<th>(3, 1)</th>
+<th>(3, 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>(0, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 0)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+</tr>
+<tr style="background-color: red">
+<th>(2, 0)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr style="background-color: pink">
+<th>(2, 1)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>1</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 3)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-3</td>
+</tr>
+<tr>
+<th>(3, 0)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table></div><div class="slide" style="display: none;"><table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>(0, 1)</th>
+<th>(0, 2)</th>
+<th>(0, 3)</th>
+<th>(1, 0)</th>
+<th>(1, 2)</th>
+<th>(1, 3)</th>
+<th>(2, 0)</th>
+<th>(2, 1)</th>
+<th>(2, 3)</th>
+<th>(3, 0)</th>
+<th>(3, 1)</th>
+<th>(3, 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>(0, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 0)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+</tr>
+<tr style="background-color: red">
+<th>(2, 0)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr style="background-color: pink">
+<th>(2, 3)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-3</td>
+</tr>
+<tr>
+<th>(3, 0)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table></div><div class="slide" style="display: none;"><table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>(0, 1)</th>
+<th>(0, 2)</th>
+<th>(0, 3)</th>
+<th>(1, 0)</th>
+<th>(1, 2)</th>
+<th>(1, 3)</th>
+<th>(2, 0)</th>
+<th>(2, 1)</th>
+<th>(2, 3)</th>
+<th>(3, 0)</th>
+<th>(3, 1)</th>
+<th>(3, 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>(0, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 0)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 0)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-4</td>
+</tr>
+<tr style="background-color: red">
+<th>(3, 0)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr style="background-color: pink">
+<th>(3, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table></div><div class="slide" style="display: none;"><table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>(0, 1)</th>
+<th>(0, 2)</th>
+<th>(0, 3)</th>
+<th>(1, 0)</th>
+<th>(1, 2)</th>
+<th>(1, 3)</th>
+<th>(2, 0)</th>
+<th>(2, 1)</th>
+<th>(2, 3)</th>
+<th>(3, 0)</th>
+<th>(3, 1)</th>
+<th>(3, 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>(0, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 0)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 0)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-4</td>
+</tr>
+<tr style="background-color: red">
+<th>(3, 0)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr style="background-color: pink">
+<th>(3, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>-3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table></div><div class="slide" style="display: none;"><table border="1" class="dataframe"><colgroup><col span="1"/><col span="1" style="background-color: pink"/><col span="11"/></colgroup>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>(0, 1)</th>
+<th>(0, 2)</th>
+<th>(0, 3)</th>
+<th>(1, 0)</th>
+<th>(1, 2)</th>
+<th>(1, 3)</th>
+<th>(2, 0)</th>
+<th>(2, 1)</th>
+<th>(2, 3)</th>
+<th>(3, 0)</th>
+<th>(3, 1)</th>
+<th>(3, 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>(0, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr style="background-color: pink">
+<th>(1, 0)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 0)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-4</td>
+</tr>
+<tr>
+<th>(3, 0)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table></div><div class="slide" style="display: none;"><table border="1" class="dataframe"><colgroup><col span="2"/><col span="1" style="background-color: pink"/><col span="10"/></colgroup>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>(0, 1)</th>
+<th>(0, 2)</th>
+<th>(0, 3)</th>
+<th>(1, 0)</th>
+<th>(1, 2)</th>
+<th>(1, 3)</th>
+<th>(2, 0)</th>
+<th>(2, 1)</th>
+<th>(2, 3)</th>
+<th>(3, 0)</th>
+<th>(3, 1)</th>
+<th>(3, 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>(0, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 0)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+</tr>
+<tr style="background-color: pink">
+<th>(2, 0)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+</tr>
+<tr>
+<th>(2, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-4</td>
+</tr>
+<tr>
+<th>(3, 0)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table></div><div class="slide" style="display: none;"><table border="1" class="dataframe"><colgroup><col span="3"/><col span="1" style="background-color: pink"/><col span="9"/></colgroup>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>(0, 1)</th>
+<th>(0, 2)</th>
+<th>(0, 3)</th>
+<th>(1, 0)</th>
+<th>(1, 2)</th>
+<th>(1, 3)</th>
+<th>(2, 0)</th>
+<th>(2, 1)</th>
+<th>(2, 3)</th>
+<th>(3, 0)</th>
+<th>(3, 1)</th>
+<th>(3, 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>(0, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 0)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 0)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-4</td>
+</tr>
+<tr style="background-color: pink">
+<th>(3, 0)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table></div><div class="slide" style="display: none;"><table border="1" class="dataframe"><colgroup><col span="4"/><col span="1" style="background-color: pink"/><col span="8"/></colgroup>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>(0, 1)</th>
+<th>(0, 2)</th>
+<th>(0, 3)</th>
+<th>(1, 0)</th>
+<th>(1, 2)</th>
+<th>(1, 3)</th>
+<th>(2, 0)</th>
+<th>(2, 1)</th>
+<th>(2, 3)</th>
+<th>(3, 0)</th>
+<th>(3, 1)</th>
+<th>(3, 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr style="background-color: pink">
+<th>(0, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 0)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 0)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-4</td>
+</tr>
+<tr>
+<th>(3, 0)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table></div><div class="slide" style="display: none;"><table border="1" class="dataframe"><colgroup><col span="7"/><col span="1" style="background-color: pink"/><col span="5"/></colgroup>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>(0, 1)</th>
+<th>(0, 2)</th>
+<th>(0, 3)</th>
+<th>(1, 0)</th>
+<th>(1, 2)</th>
+<th>(1, 3)</th>
+<th>(2, 0)</th>
+<th>(2, 1)</th>
+<th>(2, 3)</th>
+<th>(3, 0)</th>
+<th>(3, 1)</th>
+<th>(3, 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>(0, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr style="background-color: pink">
+<th>(0, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 0)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 0)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-4</td>
+</tr>
+<tr>
+<th>(3, 0)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table></div><div class="slide" style="display: none;"><table border="1" class="dataframe"><colgroup><col span="10"/><col span="1" style="background-color: pink"/><col span="2"/></colgroup>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>(0, 1)</th>
+<th>(0, 2)</th>
+<th>(0, 3)</th>
+<th>(1, 0)</th>
+<th>(1, 2)</th>
+<th>(1, 3)</th>
+<th>(2, 0)</th>
+<th>(2, 1)</th>
+<th>(2, 3)</th>
+<th>(3, 0)</th>
+<th>(3, 1)</th>
+<th>(3, 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>(0, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr style="background-color: pink">
+<th>(0, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 0)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>-4</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 0)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>-4</td>
+</tr>
+<tr>
+<th>(3, 0)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table></div><div class="slide" style="display: none;"><table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>(0, 1)</th>
+<th>(0, 2)</th>
+<th>(0, 3)</th>
+<th>(1, 0)</th>
+<th>(1, 2)</th>
+<th>(1, 3)</th>
+<th>(2, 0)</th>
+<th>(2, 1)</th>
+<th>(2, 3)</th>
+<th>(3, 0)</th>
+<th>(3, 1)</th>
+<th>(3, 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>(0, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(0, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 0)</th>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(1, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>-4</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 0)</th>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(2, 3)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>-4</td>
+</tr>
+<tr>
+<th>(3, 0)</th>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 1)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<th>(3, 2)</th>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>-4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table></div></div>
+<div class="controls-container">
+  <button onclick="plusSlides(-1)">Backward</button>
+  <button onclick="plusSlides(1)">Forward</button>
+</div>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("slide");
+  let messages = document.getElementsByClassName("message");
+
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    messages[i].style.display = "none";
+  }
+  slides[n-1].style.display = "block";
+  messages[n-1].style.display = "block";
+}
+</script></body>
+</html>
