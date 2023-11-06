@@ -1,10 +1,12 @@
 # hessian_of_permanent_is_full_rank_demonstration
 
 # About
-This is a code repository for creating an html slide presentation that documents the series of matrix reduction operations used in the paper to show that the truncated Hessian of the permanent of the specially chosen matrix has full rank.
+This is a code repository for creating an HTML slide presentation that documents a series of matrix reduction operations used in a paper submitted to the journal Information Processing Letters that is currently under review. The sequence of matrix operations is used to show that a particular submatrix of the Hessian of the Permanent of a specially chosen matrix is of full rank. 
+
+The actual HTML slide presentation for the dimension 4 case is contained in the file `output-4.html`, which should open in any web browser and can be downloaded by itself instead of cloning this whole repository and building it from scratch.
 
 # Setup
-This code has been tested with Python 3.9. After cloning the repository into a local directory, changing into that directory (and optionaly creating a new virtual environment) install the dependencies:
+This code has been tested with Python 3.9. After cloning the repository into a local directory, changing into that directory (and optionally creating a new virtual environment) install the dependencies:
 ```
 pip install -r requirements.txt
 ```
